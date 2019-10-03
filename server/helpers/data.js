@@ -1,6 +1,6 @@
 const states = [
   {
-    state: 'FCT',
+    state: 'fct',
     lga: ['RSH', 'RBC', 'KWL', 'KUJ', 'ABC', 'ABJ', 'BWR']
   }
 ];
