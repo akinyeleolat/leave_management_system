@@ -1,5 +1,6 @@
 /* eslint-disable no-plusplus */
 import Validator from 'validatorjs';
+import statesData from '<helpers>/data';
 
 export const randomString = (length, chars) => {
   let result = '';
@@ -11,6 +12,26 @@ export const getRandomInt = (min, max) => {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
+export const getFrontCode = () => {
+  const fcode = randomString(2, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ');
+  return fcode;
+};
+
+export const getMidCode = (min, max) => {
+  const num = getRandomInt(min, max);
+  return num;
+};
+
+export const getLGACode = (stateName) => {
+  const lgaData = statesData.find(x => x.state === stateName);
+  if (lgaData) {
+    const { lga } = lgaData;
+    const lgaCode = lga[Math.floor(Math.random() * lga.length)];
+    return lgaCode;
+  }
+  return false;
 };
 
 export const uuidFormat = 'regex:/[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[34][0-9a-fA-F]{3}-[89ab][0-9a-fA-F]{3}-[0-9a-fA-F]{12}/';
