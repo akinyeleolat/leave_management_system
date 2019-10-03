@@ -1,5 +1,5 @@
-const PlateNumbers = {
-  up: (queryInterface, Sequelize) => queryInterface.createTable('PlateNumbers', {
+const SkippedNumbers = {
+  up: (queryInterface, Sequelize) => queryInterface.createTable('SkippedNumbers', {
     id: {
       allowNull: false,
       primaryKey: true,
@@ -11,15 +11,6 @@ const PlateNumbers = {
       unique: true,
       allowNull: false
     },
-    userId: {
-      type: Sequelize.UUID,
-      allowNull: false,
-      references: {
-        model: 'Users',
-        key: 'id',
-        as: 'userId'
-      }
-    },
     createdAt: {
       allowNull: false,
       type: Sequelize.DATE
@@ -29,6 +20,6 @@ const PlateNumbers = {
       type: Sequelize.DATE
     }
   }),
-  down: queryInterface => queryInterface.dropTable('PlateNumbers')
+  down: queryInterface => queryInterface.dropTable('SkippedNumbers')
 };
-export default PlateNumbers;
+export default SkippedNumbers;

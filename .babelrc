@@ -19,12 +19,12 @@
           "alias": {
             "<test>": "./server/tests",
             "<fixtures>": "./server/fixtures",
-            "<configs>": "./server/configs",
+            "<configs>": "./server/db/configs",
             "<controllers>": "./server/controllers",
             "<helpers>": "./server/helpers",
             "<middlewares>": "./server/middlewares",
             "<server>": "./server",
-            "<serverModels>": "./server/models",
+            "<serverModels>": "./server/db/models",
             "<validations>":"./server/middlewares/validations"
           }
         }
