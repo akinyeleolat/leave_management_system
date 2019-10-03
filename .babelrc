@@ -1,0 +1,33 @@
+{
+    "presets": [
+      [
+      "@babel/preset-env",{
+        "targets": {"node": "current"}
+      }
+    ]
+  ],
+    "env": {
+      "test": {
+        "plugins": ["@babel/plugin-transform-runtime", "istanbul"]
+      }
+    },
+    "plugins": [
+      [
+        "babel-plugin-module-resolver",
+        {
+          "root": ["./server"],
+          "alias": {
+            "<test>": "./server/tests",
+            "<fixtures>": "./server/fixtures",
+            "<configs>": "./server/configs",
+            "<controllers>": "./server/controllers",
+            "<helpers>": "./server/helpers",
+            "<middlewares>": "./server/middlewares",
+            "<server>": "./server",
+            "<serverModels>": "./server/models",
+            "<validations>":"./server/middlewares/validations"
+          }
+        }
+      ]
+    ]
+  }
