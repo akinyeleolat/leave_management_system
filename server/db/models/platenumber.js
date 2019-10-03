@@ -11,9 +11,16 @@ const platenumber = (sequelize, DataTypes) => {
           isUUID: 4
         }
       },
-      number: {
+      numberlist: {
         type: DataTypes.STRING,
-        unique: true,
+        allowNull: false,
+        validate: {
+          notEmpty: true
+        }
+      },
+      skippednumber: {
+        type: DataTypes.STRING,
+        unique: false,
         allowNull: false,
         validate: {
           notEmpty: true

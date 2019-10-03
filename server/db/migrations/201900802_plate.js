@@ -6,9 +6,12 @@ const PlateNumbers = {
       type: Sequelize.UUID,
       defaultValue: Sequelize.UUIDV4
     },
-    number: {
+    numberlist: {
       type: Sequelize.STRING,
-      unique: true,
+      allowNull: false
+    },
+    skippednumber: {
+      type: Sequelize.STRING,
       allowNull: false
     },
     userId: {
